@@ -25,7 +25,7 @@
     display: flex;
     justify-content: space-between;
   }
-    .footer_data ul  li{
+.footer_data ul  li{
    cursor:pointer;
   }
 .service_code {
