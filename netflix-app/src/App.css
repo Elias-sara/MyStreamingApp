@@ -1,0 +1,62 @@
+/* App.css */
+
+.App {
+    font-family: Arial, sans-serif;
+    background-color: #111; /* Dark background for a more cinematic look */
+    color: #fff; /* White text color */
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Optional: Center content vertically if needed */
+  .App > div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  /* Header Styles */
+  .Header {
+    background-color: #141414;
+    padding: 20px;
+    text-align: center;
+    border-bottom: 1px solid #333;
+  }
+  
+  /* Banner Styles */
+  .Banner {
+    width: 100%;
+    height: 400px;
+    background-size: cover;
+    background-position: center;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    position: relative;
+  }
+  
+  /* RowList Styles */
+  .RowList {
+    width: 100%;
+    padding: 20px;
+  }
+  
+  .RowList h2 {
+    margin-bottom: 20px;
+    font-size: 1.5rem;
+  }
+  
+  /* Footer Styles */
+  .Footer {
+    width: 100%;
+    background-color: #141414;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    border-top: 1px solid #333;
+  }
+  

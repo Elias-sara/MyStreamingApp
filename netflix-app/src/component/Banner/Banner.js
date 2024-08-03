@@ -13,6 +13,7 @@ const truncate = (text, length) => {
 
 const Banner = () => {
     const [movie, setMovie] = useState({});
+    const [error, setError] = useState(false); // Added state for error handling
 
     useEffect(() => {
         const fetchMovie = async () => {
@@ -22,11 +23,16 @@ const Banner = () => {
                 setMovie(movies[Math.floor(Math.random() * movies.length)]);
             } catch (error) {
                 console.log("Error fetching movie data:", error);
+                setError(true); // Set error state
             }
         };
 
         fetchMovie();
     }, []);
+
+    if (error) {
+        return <div className="banner">Error loading banner.</div>; // Fallback UI
+    }
 
     return (
         <div className="banner" style={{
@@ -42,9 +48,9 @@ const Banner = () => {
                     {movie?.title || movie?.name || movie?.original_name}
                 </h1>
                 <div className="banner_buttons">
-                    <button className="banner_button play">Play</button>
-                    <button className="banner_button">My List</button>
-                </div>
+                <button className="banner_button play" aria-label="Play movie">Play</button>
+                <button className="banner_button" aria-label="Add to my list">My List</button>
+                 </div>
                 <h1 className="banner_description">{truncate(movie?.overview, 150)}</h1>
             </div>
             <div className="banner_fadeBottom" />
